@@ -24,7 +24,7 @@ function MessageInput({ input, setInput, onSend, loading }) {
         <button
           onClick={onSend}
           disabled={loading}
-          className="absolute bottom-2 right-2 bg-black text-white px-4 py-2 rounded-full hover:bg-blue-500 active:bg-blue-600 disabled:opacity-50 flex items-center justify-center transition-all duration-200"
+          className="absolute bottom-2 right-2 bg-black text-white px-4 py-2 rounded-full"
         >
           <ArrowRight size={20} />
         </button>
