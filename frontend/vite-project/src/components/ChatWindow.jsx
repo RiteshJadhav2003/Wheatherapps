@@ -1,19 +1,19 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import MessageBubble from './MessageBubble';
 
 function ChatWindow({ messages }) {
-  const chatEndRef = useRef(null);
+  const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
   return (
-    <div className="flex-1 overflow-y-auto bg-white p-4 rounded shadow">
-      {messages.map((msg, idx) => (
-        <MessageBubble key={idx} role={msg.role} content={msg.content} />
+    <div className="flex-1 overflow-y-auto p-4 max-w-2xl mx-auto w-full">
+      {messages.map((msg, index) => (
+        <MessageBubble key={index} role={msg.role} content={msg.content} />
       ))}
-      <div ref={chatEndRef} />
+      <div ref={messagesEndRef} />
     </div>
   );
 }
